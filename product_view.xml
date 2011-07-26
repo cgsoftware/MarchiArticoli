@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+  
+        <record model="ir.ui.view" id="product_marchio_form">
+            <field name="name">product.marchio.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+                <field name="arch" type="xml">
+		  
+		    <field name="categ_id" position="after">
+			<newline/>
+			<field name="marchio_ids" select='2'/>
+		    </field>
+		</field>
+        </record>
+    
+        <record id="product_search_form_view_cici" model="ir.ui.view">
+            <field name="name">product.search.form.cici</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_search_form_view"/>
+            <field name="arch" type="xml">
+                       <field name="pricelist_id" position="after" >
+			    <field name="marchio_ids" widget="selection" context="{'marchio': self}" />
+		      </field>
+	    </field>
+	  </record>
+    
+    </data>
+ </openerp>
