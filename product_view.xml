@@ -10,7 +10,7 @@
 		  
 		    <field name="categ_id" position="after">
 			<newline/>
-			<field name="marchio_ids" select='2'/>
+			<field name="marchio_ids" select='1'/>
 		    </field>
 		</field>
         </record>
@@ -20,7 +20,7 @@
             <field name="model">product.product</field>
             <field name="inherit_id" ref="product.product_search_form_view"/>
             <field name="arch" type="xml">
-                       <field name="pricelist_id" position="after" >
+                       <field name="default_code" position="after" >
 			    <field name="marchio_ids" widget="selection" context="{'marchio': self}" />
 		      </field>
 	    </field>
